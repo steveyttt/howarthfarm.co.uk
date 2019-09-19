@@ -3,10 +3,14 @@
 All necessary pieces to host the howarthfarm.co.uk website in a static S3 bucket.  
 
 ### Can i play localy? ###  
-* download and install nodejs, i'm running v6.11.2
-* npm install
-* npm start
-* Browse to localhost:3000
+* download and install go, i'm running go1.12.4  
+```go run main.go```
+
+## How to build a local container image  
+```docker build -t howarthfarm .```
+
+## Then run it locally with  
+```docker run -d -p 80:8080 --name runningsite1 mywebsite```
 
 ### How to deploy in S3 ###
 * Official walkthrough [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html)
@@ -28,5 +32,4 @@ All necessary pieces to host the howarthfarm.co.uk website in a static S3 bucket
 * I havent added a robots.txt as google crawls all pages on the site if it gets a 404 for the /robots.txt see [here](https://support.google.com/webmasters/answer/2409682)
 * S3 supports the "If-Modified-Since" that googe reads when crawling
 * I havent done a sitemap as it is a one page site
-* altmaps have been described properly to help SEO
-* 
+* altmaps have been described properly to help SEO  
